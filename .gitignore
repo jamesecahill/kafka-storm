@@ -1,0 +1,15 @@
+.vagrant
+/target/
+**/target
+.settings/
+*.classpath
+*.project
+*.checkstyle
+/ui/
+/test-output
+/build/
+/bin/
+/gradle/
+/.gradle/
+/ui/
+.DS_Store
