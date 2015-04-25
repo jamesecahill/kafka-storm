@@ -21,7 +21,7 @@ import storm.kafka.ZkHosts;
 public class TestKafkaTopology {
     public static void main(String ... args) throws Exception {
         BrokerHosts hosts = new ZkHosts("192.168.111.100:2181");
-        SpoutConfig spoutConfig = new SpoutConfig(hosts, "test2", "/" + "test2", UUID.randomUUID().toString());
+        SpoutConfig spoutConfig = new SpoutConfig(hosts, "test", "/" + "test", UUID.randomUUID().toString());
         spoutConfig.scheme = new SchemeAsMultiScheme(new StringScheme());
         KafkaSpout spout = new KafkaSpout(spoutConfig);
 
@@ -44,6 +44,6 @@ public class TestKafkaTopology {
 
         Config conf = new Config();
         conf.setNumWorkers(2);
-        StormSubmitter.submitTopology("Test Kafka Reader", conf, builder.createTopology());
+        StormSubmitter.submitTopology("TestKafkaReader", conf, builder.createTopology());
     }
 }

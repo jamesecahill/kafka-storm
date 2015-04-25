@@ -8,4 +8,5 @@ cd apache-storm-0.9.4
 sudo cp /vagrant/provision/supervisor-nimbus.conf /etc/supervisor/conf.d/
 sudo cp /vagrant/provision/supervisor-ui.conf /etc/supervisor/conf.d/
 sudo cp /vagrant/provision/storm.yaml conf/
+sudo chown -R vagrant.vagrant /home/vagrant
 sudo service supervisor restart

@@ -14,5 +14,10 @@ to follow on that project...
  * ```vagrant up```
  * wait
  * http://192.168.111.101:8080... verify the worker and nimbus are up
+ * ```vagrant ssh kafka```
+ * cd to kafka directory
+ * ```bin/kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic test```
  * deploy the topology
- * send some messages
+   * ```mvn package``` storm-code
+   * on nimbus: ```bin/storm jar /vagrant/storm-code/target/storm-kafka-topology-0.0.1-SNAPSHOT.jar com.test.storm.TestKafkaTopology```
+ * send some messages (```bin/kafka-console-producer.sh --broker-list localhost:9092 --topic test```)

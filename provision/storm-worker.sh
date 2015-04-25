@@ -7,4 +7,5 @@ tar -xzvf apache-storm-0.9.4.tar.gz
 cd apache-storm-0.9.4
 sudo cp /vagrant/provision/supervisor-worker.conf /etc/supervisor/conf.d/
 sudo cp /vagrant/provision/storm.yaml conf/
+sudo chown -R vagrant.vagrant /home/vagrant
 sudo service supervisor restart
